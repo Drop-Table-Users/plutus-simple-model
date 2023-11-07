@@ -76,7 +76,6 @@ common deps
     , cardano-crypto
     , cardano-crypto-class
     , cardano-ledger-alonzo
-    , cardano-ledger-api
     , cardano-ledger-babbage
     , cardano-ledger-core
     , cardano-ledger-shelley
