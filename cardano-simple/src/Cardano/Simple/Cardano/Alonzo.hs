@@ -125,7 +125,7 @@ toAlonzoTx network params extra tx = do
           txvldt = getInterval tx
           txUpdates = C.SNothing
           reqSignerHashes = getSignatories tx
-      mint <- getMint tx
+      (C.MaryValue _ mint) <- getMint tx
       let scriptIntegrityHash = C.SNothing
           adHash = C.SNothing
           txnetworkid = C.SJust network
