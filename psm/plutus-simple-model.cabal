@@ -153,40 +153,9 @@ test-suite plutus-simple-model-test
   main-is:        Spec.hs
   other-modules:
     Suites.Plutarch
-    Suites.Plutus.Model.FakeCoin
-    Suites.Plutus.Model.Script.V1
-    Suites.Plutus.Model.Script.V1.Onchain.Counter
-    Suites.Plutus.Model.Script.V1.Onchain.Counter.Script
-    Suites.Plutus.Model.Script.V1.Onchain.Game
-    Suites.Plutus.Model.Script.V1.Onchain.Game.Script
-    Suites.Plutus.Model.Script.V1.Onchain.Nft
-    Suites.Plutus.Model.Script.V1.Onchain.Safe
-    Suites.Plutus.Model.Script.V1.Onchain.Safe.Script
-    Suites.Plutus.Model.Script.V1.Onchain.Staking
-    Suites.Plutus.Model.Script.V1.Test.Counter
-    Suites.Plutus.Model.Script.V1.Test.Game
-    Suites.Plutus.Model.Script.V1.Test.Nft
-    Suites.Plutus.Model.Script.V1.Test.Safe
-    Suites.Plutus.Model.Script.V1.Test.Staking
-    Suites.Plutus.Model.Script.V2
-    Suites.Plutus.Model.Script.V2.Onchain.Game
-    Suites.Plutus.Model.Script.V2.Onchain.Game.Script
-    Suites.Plutus.Model.Script.V2.Onchain.Lend
-    Suites.Plutus.Model.Script.V2.Onchain.Lend.Script
-    Suites.Plutus.Model.Script.V2.Onchain.Oracle
-    Suites.Plutus.Model.Script.V2.Onchain.Oracle.Hashed
-    Suites.Plutus.Model.Script.V2.Onchain.Oracle.Inlined
-    Suites.Plutus.Model.Script.V2.Test.Game
-    Suites.Plutus.Model.Script.V2.Test.GameRef
-    Suites.Plutus.Model.Script.V2.Test.Lend
-    Suites.Plutus.Model.Script.V2.Test.Oracle.Hashed
-    Suites.Plutus.Model.Script.V2.Test.Oracle.Inlined
-    Suites.Plutus.Model.User
-    Suites.Plutus.Model.Util
 
   build-depends:
     , cardano-simple
     , plutus-simple-model
-    , plutus-tx-plugin
 
   hs-source-dirs: test
