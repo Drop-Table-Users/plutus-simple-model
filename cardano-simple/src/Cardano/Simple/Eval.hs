@@ -129,7 +129,9 @@ evaluateScriptsInTx ::
   ( HasField "_protocolVersion" (Ledger.PParams era) Ledger.ProtVer
   , HasField "_maxTxExUnits" (Ledger.PParams era) Alonzo.ExUnits
   , HasField "_costmdls" (Ledger.PParams era) Alonzo.CostModels
+  , HasField "_keyDeposit" (Ledger.PParams era)
   , Ledger.AlonzoEraTx era
+  , Ledger.EraUTxO era
   , Ledger.Script era ~ Alonzo.AlonzoScript era
   , Ledger.ScriptsNeeded era ~ Alonzo.AlonzoScriptsNeeded era
   , ExtendedUTxO era
