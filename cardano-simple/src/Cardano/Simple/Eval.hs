@@ -34,6 +34,7 @@ import Cardano.Ledger.Shelley.TxBody (ShelleyEraTxBody)
 
 import Cardano.Ledger.Alonzo.Language qualified as Alonzo
 import Cardano.Ledger.Alonzo.Scripts qualified as Alonzo
+import Cardano.Ledger.Alonzo.UTxO qualified as Alonzo
 
 import Cardano.Simple.Cardano.Class (
   IsCardanoTx,
