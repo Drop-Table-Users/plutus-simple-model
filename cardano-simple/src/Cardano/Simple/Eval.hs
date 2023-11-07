@@ -105,6 +105,7 @@ txBalance ::
   ( IsCardanoTx era
   , ShelleyEraTxBody era
   , Ledger.EraUTxO era
+  , HasField "_keyDeposit" (Ledger.PParams era) Ledger.Coin
   ) =>
   Map TxOutRef TxOut ->
   Ledger.PParams era ->
