@@ -307,7 +307,7 @@ fromInType = \case
   Plutus.ConsumeScriptAddress script redeemer datum -> Just (fmap P.getValidator <$> script, redeemer, datum)
   _ -> Nothing
 
-toRedeemerWitness :: (C.Era era) => P.Extra -> Plutus.Tx -> C.Redeemers era
+toRedeemerWitness :: forall era. (C.Era era) => P.Extra -> Plutus.Tx -> C.Redeemers era
 toRedeemerWitness extra tx =
   C.Redeemers $ mintRedeemers <> inputRedeemers <> certRedeemers <> withdrawRedeemers
   where
