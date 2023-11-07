@@ -25,8 +25,8 @@
               "${plutarch}/plutarch-extra"
             ];
             toHaddock = [
-              "plutarch"
-              "plutarch-extra"
+#              "plutarch"
+#              "plutarch-extra"
 #              "cardano-crypto"
 #              "cardano-ledger-alonzo"
 #              "cardano-ledger-babbage"
