@@ -22,6 +22,7 @@ import Cardano.Ledger.BaseTypes qualified as Ledger
 import Cardano.Ledger.Core qualified as Ledger
 import Cardano.Ledger.Language qualified as Ledger
 import Cardano.Ledger.Shelley.UTxO qualified as Ledger
+import Cardano.Ledger.Coin qualified as Ledger
 
 import Cardano.Ledger.Slot (EpochSize (..))
 import Cardano.Slotting.EpochInfo.Impl (fixedEpochInfo)
