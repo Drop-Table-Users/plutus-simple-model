@@ -29,7 +29,7 @@ import Cardano.Slotting.Time (SystemStart (..), slotLengthFromMillisec)
 
 import Cardano.Ledger.Alonzo.Tools (evaluateTransactionExecutionUnits)
 import Cardano.Ledger.Alonzo.TxInfo (ExtendedUTxO, TranslationError)
-import Cardano.Ledger.Shelley.API (CLI, evaluateTransactionBalance)
+import Cardano.Ledger.Shelley.API (evaluateTransactionBalance)
 import Cardano.Ledger.Shelley.TxBody (ShelleyEraTxBody)
 
 import Cardano.Ledger.Alonzo.Language qualified as Alonzo
@@ -101,7 +101,6 @@ utxoForTransaction utxos network tx =
 txBalance ::
   forall era.
   ( IsCardanoTx era
-  , CLI era
   , ShelleyEraTxBody era
   ) =>
   Map TxOutRef TxOut ->
