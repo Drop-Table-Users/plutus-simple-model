@@ -9,3 +9,6 @@ allow-newer:
 constraints:
     aeson >= 2
   , hedgehog >= 1.1
+
+package plutus-simple-model
+  documentation: False
