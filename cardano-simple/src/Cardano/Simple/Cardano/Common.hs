@@ -385,5 +385,5 @@ toScriptWitness extra tx =
 toDatum :: P.Datum -> C.Data era
 toDatum (P.Datum (P.BuiltinData d)) = C.Data d
 
-toRedeemer :: P.Redeemer -> C.Data era
+toRedeemer :: (C.Era era) => P.Redeemer -> C.Data era
 toRedeemer (P.Redeemer (P.BuiltinData d)) = C.Data d
