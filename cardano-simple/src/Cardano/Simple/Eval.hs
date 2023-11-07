@@ -130,7 +130,7 @@ evaluateScriptsInTx ::
   , HasField "_costmdls" (Ledger.PParams era) Alonzo.CostModels
   , Ledger.AlonzoEraTx era
   , Ledger.Script era ~ Alonzo.AlonzoScript era
-  , Ledger.ScriptsNeeded era ~ Alonzo.AlonzoScripts
+  , Ledger.ScriptsNeeded era ~ Alonzo.AlonzoScriptsNeeded era
   , ExtendedUTxO era
   , IsCardanoTx era
   ) =>
