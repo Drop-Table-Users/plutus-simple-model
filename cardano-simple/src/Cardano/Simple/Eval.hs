@@ -54,7 +54,7 @@ import PlutusLedgerApi.V1.Time (getPOSIXTime)
 import PlutusLedgerApi.V2 (TxOut, TxOutRef)
 
 evalScript ::
-  (HasField "_protocolVersion" (Ledger.PParams era) Ledger.ProtVer) =>
+  (HasField "_protocolVersion" (Ledger.PParams era) Ledger.ProtVer, Ledger.Era era) =>
   Ledger.Language ->
   Ledger.PParams era ->
   Ledger.CostModel ->
@@ -102,6 +102,7 @@ txBalance ::
   forall era.
   ( IsCardanoTx era
   , ShelleyEraTxBody era
+  , Ledger.EraUTxO era
   ) =>
   Map TxOutRef TxOut ->
   Ledger.PParams era ->
@@ -129,6 +130,7 @@ evaluateScriptsInTx ::
   , HasField "_costmdls" (Ledger.PParams era) Alonzo.CostModels
   , Ledger.AlonzoEraTx era
   , Ledger.Script era ~ Alonzo.AlonzoScript era
+  , Ledger.ScriptsNeeded era ~ Alonzo.AlonzoScripts
   , ExtendedUTxO era
   , IsCardanoTx era
   ) =>
