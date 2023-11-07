@@ -161,7 +161,7 @@ toWits txBodyHash extra tx = do
   let redeemerWits = toRedeemerWitness extra tx
   scriptWits <- toScriptWitness extra tx
   pure $
-    C.TxWitness
+    C.AlonzoTxWits
       (toKeyWitness txBodyHash tx)
       bootstrapWits
       scriptWits
