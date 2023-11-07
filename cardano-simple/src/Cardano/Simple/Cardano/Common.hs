@@ -382,7 +382,7 @@ toScriptWitness extra tx =
         (fromInType <=< Plutus.txInType)
         (Set.toList $ Plutus.txInputs tx)
 
-toDatum :: P.Datum -> C.Data era
+toDatum :: (C.Era era) => P.Datum -> C.Data era
 toDatum (P.Datum (P.BuiltinData d)) = C.Data d
 
 toRedeemer :: (C.Era era) => P.Redeemer -> C.Data era
