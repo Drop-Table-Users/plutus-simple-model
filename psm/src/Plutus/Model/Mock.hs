@@ -517,7 +517,6 @@ checkSingleTx ::
   , Core.Script era ~ Alonzo.AlonzoScript era
   , Class.IsCardanoTx era
   , Core.Value era ~ Mary.MaryValue C.StandardCrypto
-  , C.CLI era
   , C.AlonzoEraTx era
   ) =>
   Core.PParams era ->
