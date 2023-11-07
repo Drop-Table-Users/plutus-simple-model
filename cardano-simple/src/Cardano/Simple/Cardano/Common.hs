@@ -288,7 +288,7 @@ toKeyWitness txBodyHash tx =
       Map.elems $
         Plutus.txSignatures tx
 
-toDatumWitness :: (C.Era era, C.Crypto era ~ StandardCrypto) => Plutus.Tx -> Either ToCardanoError (C.TxDats era)
+toDatumWitness :: (C.Era era, C.EraCrypto era ~ StandardCrypto) => Plutus.Tx -> Either ToCardanoError (C.TxDats era)
 toDatumWitness tx = do
   datumWits1 <- Map.fromList <$> mapM (\d -> (,toDatum d) <$> toDataHash (C.datumHash d)) validatorDatums1
   datumWits2 <- Map.fromList <$> mapM (\(dh, d) -> (,toDatum d) <$> toDataHash dh) validatorDatums2
@@ -354,10 +354,10 @@ toRedeemerWitness extra tx =
     addDefaultExUnits rdm = (rdm, C.ExUnits 1 1)
 
 toScriptWitness ::
-  (C.Crypto era ~ StandardCrypto) =>
+  (C.EraCrypto era ~ StandardCrypto) =>
   P.Extra ->
   Plutus.Tx ->
-  Either ToCardanoError (Map (C.ScriptHash (C.Crypto era)) (C.AlonzoScript era))
+  Either ToCardanoError (Map (C.ScriptHash (C.EraCrypto era)) (C.AlonzoScript era))
 toScriptWitness extra tx =
   Map.fromList <$> mapM (\s -> (,C.toScript s) <$> toScriptHash (C.validatorHash (fmap P.Validator s))) allScripts
   where
