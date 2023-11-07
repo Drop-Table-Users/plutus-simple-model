@@ -24,14 +24,13 @@
               "${plutarch}"
               "${plutarch}/plutarch-extra"
             ];
-            project.doHaddock = false;
             toHaddock = [
               "plutarch"
               "plutarch-extra"
-              "cardano-crypto"
-              "cardano-ledger-alonzo"
-              "cardano-ledger-babbage"
-              "cardano-ledger-core"
+#              "cardano-crypto"
+#              "cardano-ledger-alonzo"
+#              "cardano-ledger-babbage"
+#              "cardano-ledger-core"
             ];
 
           })
