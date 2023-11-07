@@ -139,7 +139,7 @@ evaluateScriptsInTx ::
   Extra ->
   SlotConfig ->
   Either
-    (Either ToCardanoError (TranslationError (Ledger.Crypto era)))
+    (Either ToCardanoError (TranslationError (Ledger.EraCrypto era)))
     Alonzo.ExUnits
 evaluateScriptsInTx utxos pparams network tx extra slotCfg = do
   ltx <- leftMap Left $ toCardanoTx @era network pparams extra tx
