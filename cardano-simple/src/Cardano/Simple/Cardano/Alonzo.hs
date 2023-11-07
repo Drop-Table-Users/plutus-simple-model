@@ -24,6 +24,7 @@ import Cardano.Ledger.SafeHash qualified as C (hashAnnotated)
 import Cardano.Ledger.Shelley.API.Types qualified as C (
   StrictMaybe (..),
  )
+import Cardano.Ledger.Mary.Value qualified as C
 import Cardano.Simple.Cardano.Class
 import Cardano.Simple.Cardano.Common (
   getDCerts,
