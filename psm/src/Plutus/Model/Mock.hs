@@ -525,6 +525,7 @@ checkSingleTx ::
   , Core.Value era ~ Mary.MaryValue C.StandardCrypto
   , C.AlonzoEraTx era
   , C.ScriptsNeeded era ~ C.AlonzoScriptsNeeded era
+  , C.EraUTxO era
   ) =>
   Core.PParams era ->
   Extra ->
