@@ -27,6 +27,7 @@ import Cardano.Ledger.Serialization qualified as C
 import Cardano.Ledger.Shelley.API.Types qualified as C (
   StrictMaybe (..),
  )
+import Cardano.Ledger.Mary.Value qualified as C
 import Cardano.Simple.Cardano.Class
 import Cardano.Simple.Cardano.Common (
   ToCardanoError,
@@ -92,7 +93,7 @@ toBabbageTx network params extra tx = do
           txvldt = getInterval tx
           txUpdates = C.SNothing
           reqSignerHashes = getSignatories tx
-      mint <- getMint tx
+      (C.MaryValue _ mint) <- getMint tx
       let scriptIntegrityHash = C.SNothing
           adHash = C.SNothing
           txNetworkId = C.SJust network
