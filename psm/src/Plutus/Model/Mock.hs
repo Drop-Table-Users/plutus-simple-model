@@ -149,6 +149,7 @@ import Cardano.Crypto.Hash.Class qualified as C
 import Cardano.Crypto.Seed qualified as C
 import Cardano.Ledger.Alonzo.Tx qualified as C
 import Cardano.Ledger.Alonzo.TxInfo (ExtendedUTxO)
+import Cardano.Ledger.Alonzo.UTxO qualified as C
 import Cardano.Ledger.Core qualified as Core
 import Cardano.Ledger.Crypto qualified as C
 import Cardano.Ledger.Shelley.API.Types qualified as C
@@ -177,6 +178,7 @@ import Cardano.Ledger.Babbage.PParams
 import Cardano.Ledger.Block qualified as Ledger
 import Cardano.Ledger.Mary.Value qualified as Mary
 import Cardano.Ledger.Shelley.API.Wallet qualified as C
+import Cardano.Ledger.Shelley.UTxO qualified as C
 import Cardano.Ledger.TxIn qualified as Ledger
 import Cardano.Simple.Cardano.Alonzo ()
 import Cardano.Simple.Cardano.Alonzo qualified as Alonzo
@@ -193,6 +195,7 @@ import Plutus.Model.Mock.Log
 import Plutus.Model.Mock.MockConfig
 import Plutus.Model.Mock.Stat
 import Plutus.Model.Validator (IsValidator, scriptHash)
+
 
 newtype User = User
   { userSignKey :: C.KeyPair 'C.Witness C.StandardCrypto
@@ -518,6 +521,7 @@ checkSingleTx ::
   , Class.IsCardanoTx era
   , Core.Value era ~ Mary.MaryValue C.StandardCrypto
   , C.AlonzoEraTx era
+  , C.ScriptsNeeded era ~ C.AlonzoScriptsNeeded era
   ) =>
   Core.PParams era ->
   Extra ->
