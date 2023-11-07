@@ -519,6 +519,7 @@ checkSingleTx ::
   , HasField "_maxTxExUnits" (Core.PParams era) Alonzo.ExUnits
   , HasField "_protocolVersion" (Core.PParams era) C.ProtVer
   , HasField "_keyDeposit" (Core.PParams era) C.Coin
+  , HasField "_poolDeposit" (Core.PParams era) C.Coin
   , Core.Script era ~ Alonzo.AlonzoScript era
   , Class.IsCardanoTx era
   , Core.Value era ~ Mary.MaryValue C.StandardCrypto
