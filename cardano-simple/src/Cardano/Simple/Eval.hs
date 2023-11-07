@@ -30,8 +30,7 @@ import Cardano.Slotting.Time (SystemStart (..), slotLengthFromMillisec)
 
 import Cardano.Ledger.Alonzo.Tools (evaluateTransactionExecutionUnits)
 import Cardano.Ledger.Alonzo.TxInfo (ExtendedUTxO, TranslationError)
--- import Cardano.Ledger.Shelley.API (evaluateTransactionBalance)
-import Cardano.Ledger.Api.Tx (evalBalanceTxBody)
+import Cardano.Ledger.Shelley.API (evaluateTransactionBalance)
 import Cardano.Ledger.Shelley.TxBody (ShelleyEraTxBody)
 
 import Cardano.Ledger.Alonzo.Language qualified as Alonzo
@@ -117,7 +116,7 @@ txBalance utxos pparams network tx extra = do
   utxo <- utxoForTransaction @era utxos network tx
   ltx <- toCardanoTx @era network pparams extra tx
   pure $
-    evalBalanceTxBody @era
+    evaluateTransactionBalance @era
       pparams
       utxo
       (const True)
@@ -131,7 +130,7 @@ evaluateScriptsInTx ::
   ( HasField "_protocolVersion" (Ledger.PParams era) Ledger.ProtVer
   , HasField "_maxTxExUnits" (Ledger.PParams era) Alonzo.ExUnits
   , HasField "_costmdls" (Ledger.PParams era) Alonzo.CostModels
-  -- , HasField "_keyDeposit" (Ledger.PParams era) Ledger.Coin
+  , HasField "_keyDeposit" (Ledger.PParams era) Ledger.Coin
   , Ledger.AlonzoEraTx era
   , Ledger.EraUTxO era
   , Ledger.Script era ~ Alonzo.AlonzoScript era
