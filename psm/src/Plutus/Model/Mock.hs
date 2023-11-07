@@ -150,6 +150,7 @@ import Cardano.Crypto.Seed qualified as C
 import Cardano.Ledger.Alonzo.Tx qualified as C
 import Cardano.Ledger.Alonzo.TxInfo (ExtendedUTxO)
 import Cardano.Ledger.Alonzo.UTxO qualified as C
+import Cardano.Ledger.Coin qualified as C
 import Cardano.Ledger.Core qualified as Core
 import Cardano.Ledger.Crypto qualified as C
 import Cardano.Ledger.Shelley.API.Types qualified as C
@@ -517,6 +518,7 @@ checkSingleTx ::
   , HasField "_costmdls" (Core.PParams era) Alonzo.CostModels
   , HasField "_maxTxExUnits" (Core.PParams era) Alonzo.ExUnits
   , HasField "_protocolVersion" (Core.PParams era) C.ProtVer
+  , HasField "_keyDeposit" (Ledger.PParams era) C.Coin
   , Core.Script era ~ Alonzo.AlonzoScript era
   , Class.IsCardanoTx era
   , Core.Value era ~ Mary.MaryValue C.StandardCrypto
