@@ -24,6 +24,7 @@
               "${plutarch}"
               "${plutarch}/plutarch-extra"
             ];
+            project.doHaddock = false;
             toHaddock = [
               "plutarch"
               "plutarch-extra"
