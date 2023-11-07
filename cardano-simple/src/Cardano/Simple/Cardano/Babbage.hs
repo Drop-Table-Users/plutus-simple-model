@@ -209,14 +209,14 @@ toWits ::
   SafeHash StandardCrypto C.EraIndependentTxBody ->
   P.Extra ->
   Plutus.Tx ->
-  Either ToCardanoError (C.TxWitness Era)
+  Either ToCardanoError (C.AlonzoTxWits Era)
 toWits txBodyHash extra tx = do
   let bootstrapWits = mempty
   datumWits <- toDatumWitness tx
   let redeemerWits = toRedeemerWitness extra tx
   scriptWits <- toScriptWitness extra tx
   pure $
-    C.TxWitness
+    C.AlonzoTxWits
       (toKeyWitness txBodyHash tx)
       bootstrapWits
       scriptWits
