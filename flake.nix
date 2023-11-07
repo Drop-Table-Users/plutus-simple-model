@@ -10,7 +10,7 @@
   };
 
   inputs = {
-    tooling.url = "github:mlabs-haskell/mlabs-tooling.nix";
+    tooling.url = "github:iburzynski/mlabs-tooling.nix";
     plutarch.url = "github:plutonomicon/plutarch-plutus";
   };
 
