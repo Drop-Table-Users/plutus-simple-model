@@ -62,6 +62,7 @@ common lang
     -Werror -Wincomplete-record-updates -fobject-code
     -fno-ignore-interface-pragmas -fno-omit-interface-pragmas
     -fobject-code -fno-specialise
+    -fplugin-opt PlutusTx.Plugin:defer-errors
 
 common deps
   build-depends:
