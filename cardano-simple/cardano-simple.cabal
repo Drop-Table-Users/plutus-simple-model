@@ -75,7 +75,7 @@ common deps
     , cardano-ledger-babbage
     , cardano-ledger-core
     , cardano-ledger-shelley
-    , cardano-ledger-shelley-ma
+    , cardano-ledger-allegra
     , cardano-slotting
     , strict-containers
     , cborg

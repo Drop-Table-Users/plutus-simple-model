@@ -72,7 +72,7 @@ import Cardano.Ledger.Shelley.API.Types qualified as C (
 import Cardano.Ledger.Shelley.API.Types qualified as Shelley (Hash)
 import Cardano.Ledger.Shelley.Delegation.Certificates qualified as C
 import Cardano.Ledger.Shelley.UTxO qualified as C
-import Cardano.Ledger.ShelleyMA.Timelocks qualified as C
+import Cardano.Ledger.Allegra.Scripts qualified as C
 import Cardano.Ledger.Slot qualified as C
 import Cardano.Ledger.TxIn qualified as C
 import Cardano.Simple.Ledger.Scripts qualified as C
